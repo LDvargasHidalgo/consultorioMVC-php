@@ -8,15 +8,29 @@
 </head>
 <body>
    <?php
-   include "modulos/cabezote.php";
-   include "modulos/menu.php";
-   include "modulos/footer.php";
-   if (isset($_GET["ruta"])){
-      if ($_GET["ruta"] == "inicio" ||
-      $_GET["ruta"] == "citas" ){
-         include "modulos/" . $_GET["ruta"] .".php";
+      include "modulos/menu.php";
+
+      echo '<div id="right-panel" class="right-panel">';
+
+
+      include "modulos/cabezote.php";
+
+
+
+      if (isset($_GET["ruta"])) {
+         if (
+            $_GET["ruta"] == "inicio" ||
+            $_GET["ruta"] == "citas"
+         ) {
+            include "modulos/" . $_GET["ruta"] . ".php";
+         }
       }
-   }
+
+      include "modulos/footer.php";
+
+      echo '<div/>';
+
+
    ?>
 </body>
 </html>
