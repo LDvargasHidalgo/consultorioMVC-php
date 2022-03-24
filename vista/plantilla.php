@@ -7,6 +7,16 @@
    <title>Consultorio </title>
 </head>
 <body>
-   <h1>hello world</h1>
+   <?php
+   include "modulos/cabezote.php";
+   include "modulos/menu.php";
+   include "modulos/footer.php";
+   if (isset($_GET["ruta"])){
+      if ($_GET["ruta"] == "inicio" ||
+      $_GET["ruta"] == "citas" ){
+         include "modulos/" . $_GET["ruta"] .".php";
+      }
+   }
+   ?>
 </body>
 </html>
