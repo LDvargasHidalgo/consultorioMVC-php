@@ -13,10 +13,7 @@
             $this->views->getView($this, "home");
         }
 
-        public function datos ($params)
-        {
-            echo 'Dato recibido: '.$params;
-        }
+        
     }
 
 
