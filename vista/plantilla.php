@@ -22,14 +22,17 @@
 </head>
 <body>
    <?php
+
+   //validate login, we store a value in a session if the value is different from ok it sends us to login
+   if(isset($_SESSION["ValidarSesionBackend"]) && $_SESSION["ValidarSersionBackend"] === "ok"){
+      include "modulos/menu.php";
+
       include "modulos/menu.php";
 
       echo '<div id="right-panel" class="right-panel">';
 
 
       include "modulos/cabezote.php";
-
-
 
       if (isset($_GET["ruta"])) {
          if (
@@ -39,12 +42,14 @@
             include "modulos/" . $_GET["ruta"] . ".php";
          }
       }
-
+      
       include "modulos/footer.php";
 
       echo '<div/>';
-
+   }else{
       include "modulos/login.php";
+   }
+    
    ?>
    <!-- Scripts -->
    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
