@@ -7,14 +7,15 @@
                     </a>
                 </div>
                 <div class="login-form">
-                    <form>
+                    <!-- a este formulario le decimos que si se ejecuta va a enviar el metodo post -->
+                    <form method="post">
                         <div class="form-group">
                             <label>Correo electrónico</label>
-                            <input type="email" class="form-control" placeholder="Email">
+                            <input type="email" class="form-control" id="ingemail" name="ingemail" placeholder="Email">
                         </div>
                         <div class="form-group">
                             <label>Contraseña</label>
-                            <input type="password" class="form-control" placeholder="Contraseña">
+                            <input type="password" class="form-control" id="ingpassword" name="ingpassword" placeholder="Contraseña">
                         </div>
                         <div class="checkbox">
                             <label>
@@ -26,7 +27,11 @@
 
                         </div>
                         <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Ingresar</button>
-                      
+                     <!--  llamamos a nuestra clase controladorAdministrador para poder utilizar la funcion de ingreso -->
+                   <?php
+$login = new ControladorAdministrador();
+$login -> ctrIngresoAdministrador();
+                   ?>
                     </form>
                 </div>
             </div>
