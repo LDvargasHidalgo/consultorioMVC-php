@@ -44,7 +44,7 @@ spl_autoload_register(function($class){
     }
 });
 
-// check controllers
+// check controllers and methods
 $controllerFile = "Controllers/" . $controller . ".php";
 if (file_exists($controllerFile)) {
     require_once($controllerFile);
@@ -55,8 +55,6 @@ if (file_exists($controllerFile)) {
         echo 'No existe el método';
 
     }
-
-
 
 } else{
     echo 'No existe controlador';
