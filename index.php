@@ -3,7 +3,9 @@
 // $plantilla = new ControladorPlantilla();
 // $plantilla->ctrPlantilla();
 
-$url = !empty($_GET['url']) ? $_GET['url'] :'inicio/inicio' ;
+require_once ('config/Config.php');
+
+$url = !empty($_GET['url']) ? $_GET['url'] :'Home/Home' ;
 $arrUrl = explode('/', $url);
 $controller = $arrUrl [0];
 $method = $arrUrl [0];
@@ -34,12 +36,40 @@ if (!empty($arrUrl [2]))
 
     
 }
-echo '<br>';
-echo "controllador: " . $controller;
-echo '<br>';
-echo 'metodo: ' . $method;
-echo '<br>';
-echo 'parametros: ' . $params;
+
+// funtion autoload for class
+spl_autoload_register(function($class){
+    if (file_exists(LIBS . 'Core/'. $class . '.php')){
+        require_once (LIBS . 'Core/'. $class . '.php');
+    }
+});
+
+// check controllers
+$controllerFile = "Controllers/" . $controller . ".php";
+if (file_exists($controllerFile)) {
+    require_once($controllerFile);
+    $controller = new $controller();
+    if(method_exists($controller, $method)){
+        $controller-> {$method}($params);
+    }else{
+        echo 'No existe el método';
+
+    }
+
+
+
+} else{
+    echo 'No existe controlador';
+}
+
+
+
+// echo '<br>';
+// echo "controllador: " . $controller;
+// echo '<br>';
+// echo 'metodo: ' . $method;
+// echo '<br>';
+// echo 'parametros: ' . $params;
 
 
 
