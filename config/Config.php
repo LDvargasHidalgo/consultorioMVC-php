@@ -1,7 +1,12 @@
 <?php
 
 const BASE_URL = 'http://localhost/consultorioMVC-php/';
-const LIBS = 'Libraries/';
-const VIEWS = 'Views/';
+
+const DB_HOST ="localhost";
+const DB_NAME ="schedule_mvc";
+const DB_USER ="root";
+const DB_PASSWORD ="";
+const DB_CHARSET ="charset-utf8";
+
 
 ?>
