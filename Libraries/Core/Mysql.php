@@ -1,17 +1,20 @@
 <?php
-class Mysql extends conexion
-{
-   private PDO $conexion;
-   private $strquery;
-   private $arrvalues;
+class Mysql extends Conexion
 
-   function  __construct()
-   {
-      $this->conexion = new conexion();
-      $this->conexion = $this->conexion->conect();
-      }
+	{
+      private $conexion;
+		private $strquery;
+		private $arrayValues;
 
-      // insert  to register
+		public function __construct()
+
+		{  
+         
+			$this->conexion = new conexion();
+			$this->conexion =$this->conexion->conect();
+		}
+
+      // insert  to register into database
       public function insert(string  $query, array $arrValues)
       {
          $this->strquery =$query;
@@ -27,15 +30,28 @@ class Mysql extends conexion
          return $lastInsert;
       }
 
-      //return all records
-      public  function select(string $query)
-      {
-         $this->strquery =$query;
-         $result =$this->conexion->prepare($this->strquery);
-         $result->execute();
-         $data = $result->fetchall(PDO::FETCH_ASSOC);
-         return $data;
-      }
+      // select data in database
+		public function select(string $query)
+		{
+			$this->strquery = $query;
+			$resutl = $this->conexion->prepare($this->strquery);
+			$resutl->execute();
+			$data = $resutl->fetch(PDO::FETCH_ASSOC);
+			return $data;
+		}
+
+		// // select all data in database
+		public function select_all(string $query)
+		{
+			$this->strquery = $query;
+			$resutl = $this->conexion->prepare($this->strquery);
+			$resutl->execute();
+			$data = $resutl->fetchall(PDO::FETCH_ASSOC);
+			return $data;
+		}
+
+
+
       //update records
       public function update(string $query, array $arrValues)
    {
@@ -50,8 +66,8 @@ class Mysql extends conexion
    {
       $this->strquery =$query;
       $result = $this->conexion->prepare($this->strquery);
-      $result->execute();
-      return $result;
+      $del = $result->execute();
+      return $del;
    }
 }
 

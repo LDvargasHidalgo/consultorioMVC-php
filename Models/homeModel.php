@@ -6,21 +6,47 @@
         {
             parent::__construct();            
         }
-        public function setUser(string $name, string $tema)        
-        {
-            $query_insert ="INSER INTO schedule (name,tema) VALUES (?,?)";
-            $arrData = array($name, $tema);
+
+        public function setUser(string $nombre, int $edad)        
+        {    //"INSER INTO schedule (name, tema) VALUES (?,?)"
+            $query_insert = 'INSERT INTO clientes (nombre, edad) VALUES (?,?)';
+            $arrData = array($nombre, $edad);
             $request_insert = $this->insert($query_insert, $arrData);
             return $request_insert;
         }
-      public function getuser($id)
-      {
-        $sql ="SELECT * FROM schedule WHERE id =$id";
-        $request =$this->select($sql);
-        return $request;
 
-      
-      }
+        public function getUser($id)
+        {
+          $sql ="SELECT * FROM clientes WHERE id =$id";
+          $request =$this->select($sql);
+          return $request;
+        }
+
+        public function updateUser(int $id, string $nombre, int $edad)
+        {
+          $sql ="UPDATE clientes SET nombre = ?, edad = ? WHERE id =$id";
+          $arrData = array($nombre, $edad);
+          $request = $this->update($sql, $arrData);
+          return $request;
+        }
+
+
+        public function getUsers()
+        {
+          $sql ="SELECT * FROM clientes";
+          $request =$this->select_all($sql);
+          return $request;
+        }
+
+
+
+
+        public function deleteUser($id)
+        {
+          $sql ="DELETE FROM clientes WHERE id =$id";
+          $request =$this->delete($sql);
+          return $request;
+        }
     }
 
-    ?>
+?>

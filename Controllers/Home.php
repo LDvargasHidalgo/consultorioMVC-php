@@ -16,13 +16,33 @@
 		}
 		public function insertar()
 		{
-			$data=$this->model->setUser("Laura", "por favor sirveeee");
+			$data=$this->model->setUser("John", 50 );
 			print_r($data);
 		}
+
 		public function verusuario($id)
 		{
-			$data = $this->model->getuser($id);
+			$data = $this->model->getUser($id);
 			print_r($data);
 		}
+
+		public function actualizar()
+		{
+			$data = $this->model->updateUser(4, "pepo", 12);
+			print_r($data);
+		}
+
+		public function verusuarios()
+		{
+			$data = $this->model->getUsers();
+			print_r($data);
+		}
+
+		public function eliminarusuario($id)
+		{
+			$data = $this->model->deleteUser($id);
+			print_r($data);
+		}
+
 	}
  ?>
