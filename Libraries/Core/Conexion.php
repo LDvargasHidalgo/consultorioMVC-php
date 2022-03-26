@@ -15,7 +15,8 @@ class Conexion
       }
    }
 
-   
+
+   // function database
    function conect (){
 
          $connectionString = "mysql:host=".DB_HOST.";dbname=".DB_NAME.";.DB_CHARSET.";
