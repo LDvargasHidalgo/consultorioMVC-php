@@ -8,7 +8,7 @@
 		
 		public function crearCita()
 		{
-			$data=$this->model->setCita("John", "Creacion de CRUD", "2022-03-26", "03:00:00" );
+			$data=$this->model->setCita("Jose", "Logica de programaión", "2022-03-26", "21:26:00" );
 			print_r($data);
 		}
 
@@ -18,9 +18,9 @@
 			print_r($data);
 		}
 
-		public function actualizarCita()
+		public function actualizarCita($id)
 		{
-			$data = $this->model->updatCita("Juan", "Creacion de CRUDo", "2022-03-26", "03:00:00");
+			$data = $this->model->updateCita($id, "Juan", "Creacion de CRUD PHP", "2022-03-30", "21:18:00");
 			print_r($data);
 		}
 

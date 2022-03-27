@@ -16,7 +16,7 @@
 		}
 		public function insertar()
 		{
-			$data=$this->model->setUser("John", 50 );
+			$data=$this->model->setUser("Maria", 20 );
 			print_r($data);
 		}
 
@@ -28,7 +28,7 @@
 
 		public function actualizar()
 		{
-			$data = $this->model->updateUser(4, "pepo", 12);
+			$data = $this->model->updateUser(1, "pepo", 12);
 			print_r($data);
 		}
 
