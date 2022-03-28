@@ -48,7 +48,6 @@ La aplicación deberá ser responsiva. <br/>
 
 
 <h1> Deploy page <h1>
-    <img src="![image](https://user-images.githubusercontent.com/78703403/160485002-4b608778-ba0c-4df2-8725-75a07b3b0e1c.png)
-" min-width="400px" max-width="400px" width="400px" align="right" alt="horario">
+   
   
 
