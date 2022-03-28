@@ -41,8 +41,8 @@
     }
 
     }
+    // bandera
     $correcto = true;
-    
 
 ?>
 
