@@ -36,10 +36,10 @@
 		
 		
 
-		public function crearCita($id, $nombre, $tema, $fecha_cita, $hora_cita)
+		public function crearCita($nombre, $tema, $fecha_cita, $hora_cita)
 		{	
 			
-			$data=$this->model->setCita($id, $nombre, $tema, $fecha_cita, $hora_cita);
+			$data=$this->model->setCita($nombre, $tema, $fecha_cita, $hora_cita);
 			return $data;
 			// print_r($data);
 		}

@@ -14,11 +14,11 @@
    </nav>
    <section class="container p-4  container-form">
 
-		<form action="save.php" method="POST"  class="contain">
+		<form action= "save.php" method="POST"  class="contain">
 				<h2 class="text-center pb-4">NUEVA CITA</h2>
 				<div class="form-group">
 					<label for="">Nombre:</label>
-					<input type="text" name="nombre" id="nombre" placeholder="Escribe tu nombre" class="form-control mb-4" required >
+					<input type="text" name= "nombre" id= "nombre" placeholder="Escribe tu nombre" class="form-control mb-4" required >
 				</div>
 				<div class="form-group">
 				<label  for="">Tema:</label>

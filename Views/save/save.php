@@ -8,37 +8,30 @@
     // print_r($_POST);
 
      // error 
-    if(isset($_POST['id'])){
-
-
-    $sql = 'UPDATE productos SET nombre = ? , precio = ? WHERE id= ? ';
-    $respuesta = $db->mysql->prepare($sql);
-
-    $respuesta->execute([
+    // var_dump($_POST);
+    if(empty($_POST)){
+        print_r($_POST['nombre']);
+        echo 'si existe';
+        print_r($_POST);
+    
         
-        $nombre,
-        $precio,
-        $id,
-    ]);
-
-    if($respuesta){
-        $correcto = true;
-    }
+        
+        
 
     }else{
 
-    print_r($_POST);
-    $id = $_POST['id'];
-    $nombre = $_POST['nombre'];
-    $tema = $_POST['tema'];
-    $fecha_cita = $_POST['fecha'];
-    $hora_cita = $_POST['hora'];
+        
+        $id = $_POST['id'];
+        $nombre = $_POST['nombre'];
+        $tema = $_POST['tema'];
+        $fecha_cita = $_POST['fecha'];
+        $hora_cita = $_POST['hora'];
 
-    $data1 = $prueba->crearCita($id, $nombre, $tema, $fecha_cita, $hora_cita);
+        $data1 = $prueba->crearCita($nombre, $tema, $fecha_cita, $hora_cita);
 
-    if($respuesta){
-        $correcto = true;
-    }
+        if($respuesta){
+            $correcto = true;
+        }
 
     }
     // bandera
