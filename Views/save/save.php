@@ -7,7 +7,7 @@
 
     // print_r($_POST);
 
-
+     // error 
     if(isset($_POST['id'])){
 
 
@@ -41,6 +41,7 @@
     }
 
     }
+    $correcto = true;
 
 ?>
 
