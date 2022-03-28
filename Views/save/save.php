@@ -1,6 +1,5 @@
 <?php
 
-    require 'config/conexion.php';
     require_once ('Controllers/Home.php'); 
     $prueba = new Home;
 
@@ -62,7 +61,7 @@
                     <?php } else {?>
                     <h3>Error al guardar</h3>
                     <?php  } ?>
-                    <a class="btn btn-secondary" href="index.php" >Atrás</a>
+                    <a class="btn btn-secondary" href="home.php" >Atrás</a>
             </div>
         </div>
     </main>
