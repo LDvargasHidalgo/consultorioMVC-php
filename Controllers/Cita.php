@@ -1,14 +1,48 @@
 <?php
 	class Cita extends Controllers{
+
+		// private  $id = $_POST['id'];
+		// private  $nombre = $_POST['nombre'];
+		// private  $tema = $_POST['tema'];
+		// private  $fecha_cita = $_POST['fecha'];
+		// private   $hora_cita = $_POST['hora'];
+
+
 		public function __construct()
 		{
 			parent::__construct();
 		}
 
-		
-		public function crearCita()
+		public function cita()
 		{
-			$data=$this->model->setCita("Jose", "Logica de programaión", "2022-03-26", "21:26:00" );
+			$data['page_id'] = 2;
+			$data['page_tag'] = "citas";
+			$data['page_title'] = "pide tu cita";
+			$data['page_name'] = "citas";
+			$this->views->getView($this,"cita",$data);
+		}
+
+
+		
+
+		// print_r($_POST);
+		
+		
+		
+			
+		
+		
+
+		public function crearCita()
+		{	
+			print_r($_POST);
+			$id = $_POST['id'];
+		    $nombre = $_POST['nombre'];
+		    $tema = $_POST['tema'];
+		    $fecha_cita = $_POST['fecha'];
+		    $hora_cita = $_POST['hora'];
+
+			$data=$this->model->setCita($id, $nombre, $tema, $fecha_cita, $hora_cita);
 			print_r($data);
 		}
 
