@@ -1,12 +1,10 @@
 <?php
 
-require_once ('Controllers/Home.php'); 
- $prueba = new Home;
+   require_once ('Controllers/Home.php'); 
+   $prueba = new Home;
 
- print_r($prueba);
 
- $data = $prueba->verCitas();
-
+   $data = $prueba->verCitas();
 
 ?>
 
@@ -30,8 +28,6 @@ require_once ('Controllers/Home.php');
                </tr>
             </thead>
             <tbody>
-
-
 
                <?php foreach($data AS $cita){ ?>
                            <tr class="text-center">

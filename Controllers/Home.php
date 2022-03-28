@@ -36,17 +36,12 @@
 		
 		
 
-		public function crearCita()
+		public function crearCita($id, $nombre, $tema, $fecha_cita, $hora_cita)
 		{	
-			print_r($_POST);
-			$id = $_POST['id'];
-		    $nombre = $_POST['nombre'];
-		    $tema = $_POST['tema'];
-		    $fecha_cita = $_POST['fecha'];
-		    $hora_cita = $_POST['hora'];
-
+			
 			$data=$this->model->setCita($id, $nombre, $tema, $fecha_cita, $hora_cita);
-			print_r($data);
+			return $data;
+			// print_r($data);
 		}
 
 		public function verCita($id)

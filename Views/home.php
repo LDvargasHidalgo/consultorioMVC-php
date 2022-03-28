@@ -14,7 +14,7 @@
    </nav>
    <section class="container p-4  container-form">
 
-		<form action="cita/crearCita" method="POST"  class="contain">
+		<form action="save.php" method="POST"  class="contain">
 				<h2 class="text-center pb-4">NUEVA CITA</h2>
 				<div class="form-group">
 					<label for="">Nombre:</label>
@@ -34,7 +34,10 @@
 			</div>
 			<div class="text-end">
 				<a href="http://localhost/consultorioMVC-php/tabla" class="btn btn-warning mt-4  ">Ver Citas</a>
-				<button type="submit" class="btn btn-dark mt-4  ml-4 ">Guardar</button>
+				<button type="submit" class="btn btn-warning mt-4">
+					<a href="http://localhost/consultorioMVC-php/save"> Guardar</a>
+				</button>
+				
 				
 			</div>
 		</form>
